@@ -6,8 +6,10 @@ function App() {
   return (
     <>
       <h1>Recipe Manager</h1>
-      <AddRecipeForm />
-      <RecipeList />
+      <div className="recipe-manager">
+        <AddRecipeForm />
+        <RecipeList />
+      </div>
     </>
   );
 }
