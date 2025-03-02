@@ -3,6 +3,8 @@ import "./App.css";
 import AddRecipeForm from "./components/AddRecipeForm";
 import RecipeList from "./components/RecipeList";
 import RecipeDetailsPage from "./components/RecipeDetailsPage";
+import FavoritesList from "./components/FavoritesList";
+import RecommendationsList from "./components/RecommendationsList";
 
 const HomePage = () => {
   return (
@@ -21,6 +23,8 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="recipe/:id" element={<RecipeDetailsPage />} />
+          <Route path="favorites" element={<FavoritesList />} />
+          <Route path="recommendations" element={<RecommendationsList />} />
         </Routes>
       </BrowserRouter>
     </>
