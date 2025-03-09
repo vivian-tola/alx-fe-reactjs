@@ -2,7 +2,7 @@
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom'; // Ensure jest-dom matchers are available
-import TodoList from './components/TodoList';
+import TodoList from './TodoList';
 
 describe('TodoList', () => {
   test('renders correctly and displays demo todos', () => {
