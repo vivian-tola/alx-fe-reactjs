@@ -19,8 +19,8 @@ const App = () => {
           <li><Link to="/">Home</Link></li>
           <li><Link to="/about">About</Link></li>
           <li><Link to="/profile">Profile</Link></li>
-          <li><Link to="/post/1">Post 1</Link></li>
-          <li><Link to="/post/2">Post 2</Link></li>
+          <li><Link to="/blog/1">Post 1</Link></li>
+          <li><Link to="/blog/2">Post 2</Link></li>
         </ul>
       </nav>
 
@@ -30,7 +30,7 @@ const App = () => {
         <Route path="/profile/*" element={<ProtectedRoute isAuthenticated={isAuthenticated} element={<Profile />} />} />
         
         <Route path="*" element={<NotFound />} />
-        <Route path="/post/:postId" element={<BlogPost />} />
+        <Route path="/blog/:id" element={<BlogPost />} />
       </Routes>
     </Router>
   );
