@@ -6,8 +6,26 @@ const AddRecipeForm = () => {
   const [steps, setSteps] = useState("");
   const [errors, setErrors] = useState("");
 
+  const validate = () => {
+    if (!title || !ingredients || !steps) {
+      setErrors("All fields are required!");
+      return;
+    }
+    const ingredientsList = ingredients
+      .split("\n")
+      .map((ingredient) => ingredient.trim())
+      .filter(Boolean);
+
+    if (ingredientsList.length < 2) {
+      setErrors("Ingredients must contain at least two items.");
+      return;
+    }
+  };
+
   const handleSubmit = (event) => {
     event.preventDefault();
+
+    validate()
 
     if (!title || !ingredients || !steps) {
       setErrors("All fields are required!");
