@@ -26,7 +26,7 @@ const HomePage = () => {
   return (
     <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
       {recipes?.map((recipe) => (
-        <div className="bg-red-100 rounded flex flex-col items-center p-2 hover:bg-red-200 hover:scale-105">
+        <div className="bg-red-100 rounded flex flex-col items-center p-2 hover:bg-red-200 hover:scale-105 shadow-sm">
           <img
             src={recipe.image}
             // alt={recipe.title}
