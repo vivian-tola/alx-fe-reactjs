@@ -4,13 +4,13 @@ const AddRecipeForm = () => {
   const [title, setTitle] = useState("");
   const [ingredients, setIngredients] = useState("");
   const [steps, setSteps] = useState("");
-  const [error, setError] = useState("");
+  const [errors, setErrors] = useState("");
 
   const handleSubmit = (event) => {
     event.preventDefault();
 
     if (!title || !ingredients || !steps) {
-      setError("All fields are required!");
+      setErrors("All fields are required!");
       return;
     }
 
@@ -24,12 +24,12 @@ const AddRecipeForm = () => {
       .filter(Boolean);
 
     if (ingredientsList.length < 2) {
-      setError("Ingredients must contain at least two items.");
+      setErrors("Ingredients must contain at least two items.");
       return;
     }
 
     // Reset error message if validation passes
-    setError("");
+    setErrors("");
     const newRecipe = {
       title,
       ingredients: ingredientsList,
@@ -106,7 +106,7 @@ const AddRecipeForm = () => {
         </div>
 
         {/* Error Message */}
-        {error && <p className="text-red-500 text-center mb-4">{error}</p>}
+        {errors && <p className="text-red-500 text-center mb-4">{errors}</p>}
 
         {/* Submit Button */}
         <div className="flex justify-center">
